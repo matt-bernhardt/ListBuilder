@@ -1,0 +1,31 @@
+.listcontainer {
+}
+.bucket {
+	padding:  .2em;
+	margin: .2em;
+	display: inline-block;
+	width: 48%;
+	height: 10em;
+	overflow: auto;
+}
+.unselected {
+	border: .1em solid gray;
+	background-color: #cdcdcd;
+
+}
+.unselected .option:before {
+	content: '+ ';
+}
+.selected {
+	border: .1em solid green;
+	background-color: #cdffcd;
+}
+.selected .label {
+	background-color: #a4cca4;
+	padding: 0.2em;
+	margin: -0.2em;
+	margin-bottom: 0.25em;
+}
+.selected .option:before {
+	content: '- ';
+}

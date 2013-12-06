@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>List Builder Demonstration</title>
+		<link rel="stylesheet" href="/styles/reset.css">
+		<link rel="stylesheet" href="listbuilder.css">
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script type="text/javascript" src="listbuilder.js"></script>
+		<script>
+$(document).ready(function() {
+
+	var listbuilder = app.listbuilder;
+	listbuilder.initialize(
+		debugFlag = false
+	);
+
+	$('.listcontainer .option').click(function() {
+		// Stop whatever might otherwise happen
+		// event.preventDefault();
+		// Pass the value of the clicked item to listbuilder
+		var target = $(this);
+		listbuilder.getClick(target);
+	});
+
+});	
+		</script>
+		<style>
+body {
+	background: #f2f2f2;
+	font-family: Arial, sans-serif;
+}	
+h1 {
+	font-weight: bold;
+	font-size: 2em;
+	margin: 0;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin: 0;
+}
+#page {
+	background: #fff;
+	border: .25em solid #eaeaea;
+	width: 980px;
+	margin: 1em auto;
+	padding: 1em;
+}
+
+#chart {
+  height: 500px;
+}
+
+.node rect {
+  cursor: move;
+  fill-opacity: .9;
+  shape-rendering: crispEdges;
+}
+
+.node text {
+  pointer-events: none;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.link {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .2;
+}
+
+.link:hover {
+  stroke-opacity: .5;
+}
+
+		</style>
+	</head>
+	<body>
+		<div id="page">
+			<h1>List Builder Demonstration</h1>
+			<form method="get">
+			<select id="filter" name="filter" multiple="true" class="listbuilder">
+				<option value="ipsum">Lorum</option>
+				<option value="too">Second</option>
+				<option value="again">Third</option>
+			</select>
+			<input type="submit">
+			</form>
+		</div>
+	</body>
+</html>
