@@ -14,6 +14,8 @@ window.app.listbuilder = {
 	initialize : function(config) {
 		config = config || {};
 		this.list = config.listElement || $(".listbuilder");
+		// check for console
+		if (!window.console) console = { log: function() {} };
 		this.debugFlag = config.debugFlag || true;
 		this.debug('init called');
 		// build list container after identified select list
