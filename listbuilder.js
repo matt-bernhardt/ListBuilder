@@ -34,6 +34,8 @@ window.app.listbuilder = {
 		$(selected).append("<div class='label'>Show:</div>");
 		$(listcontainer).append(selected);
 		this.syncList();
+		// append hidden class to original select list, hiding it
+		$(this.list).addClass("listhidden");
 		this.debug('init finished');
 	},
 
@@ -62,7 +64,7 @@ window.app.listbuilder = {
 			$(option).attr("class","option");
 			$(option).attr("data-value",e.value);
 			$(option).append(e.text);
-			$(unselected).append(option)
+			$(unselected).append(option);
 		});
 		this.debug('sync finished');
 	},
@@ -93,4 +95,4 @@ window.app.listbuilder = {
 			console.log(msg);
 		}
 	}
-}
+};
