@@ -75,9 +75,8 @@ window.app.listbuilder = {
 		// rebuild states based on selected contents
 		$(selected).children(".option").each(function(i,e) {
 			// set this option to be selected
-			console.log("_"+$(this).attr("data-value"));
-			$(foo).find("option[value='"+$(this).attr("data-value")+"']").attr('selected',true);
-			console.log($(this.list).children("option"));
+			// console.log("_"+$(this).attr("data-value"));
+			$(foo).find("option[value='"+$(this).attr("data-value")+"']").prop('selected',true);
 			//console.log(i+' item '+$(e).attr('data-value'));
 			//$(this.list).children("option").attr(e.attr('data-value')).prop('selected',true);
 		});
