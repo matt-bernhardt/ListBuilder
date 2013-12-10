@@ -81,11 +81,16 @@ dd {
 		<div id="page">
 			<h1>List Builder Demonstration</h1>
 			<form method="get">
-			<select id="filter" name="filter" multiple="true" class="listbuilder">
-				<option value="ipsum">Lorum</option>
-				<option value="too">Second</option>
-				<option value="again">Third</option>
-			</select>
+			<label for="filter">
+				Show only these departments:<br />
+				<select id="filter" name="filter" multiple="true" class="listbuilder">
+					<option value="astronomy">Astronomy</option>
+					<option value="biology">Biology</option>
+					<option value="chemistry">Chemistry</option>
+					<option value="dentistry">Dentistry</option>
+					<option value="energy">Energy</option>
+				</select>
+			</label>
 			<input type="submit">
 			</form>
 		</div>
