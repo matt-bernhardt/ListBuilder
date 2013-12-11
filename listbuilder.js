@@ -71,6 +71,28 @@ window.app.listbuilder = {
 	},
 
 	/*
+	* This function will sort the contents of a supplied list element
+	* From http://stackoverflow.com/a/304428/2245617
+	*/
+	sortList : function(list) {
+		this.debug('sorting list');
+		var items = $(list).children('div.option').get();
+		items.sort(function(a,b) {
+			var keyA = $(a).text();
+			var keyB = $(b).text();
+
+			if (keyA < keyB) return -1;
+			if (keyA > keyB) return 1;
+			return 0;
+		});
+		var ul = $(list);
+		$.each(items, function(i, li) {
+			ul.append(li);
+		});
+		this.debug('list sorted');
+	},
+
+	/*
 	* This reads the contents of the selected bucket and syncs statuses back to the underlying select control
 	*/
 	syncSelect: function() {
