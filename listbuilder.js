@@ -20,7 +20,7 @@ window.app.listbuilder = {
 		this.debug('init called');
 		// build list container after identified select list
 		listcontainer = document.createElement("div");
-		foo = this.list;
+		original = this.list;
 		$(listcontainer).attr("class","listcontainer");
 		$(this.list).after(listcontainer);
 		// build "unselected" and "selected" buckets
@@ -33,7 +33,7 @@ window.app.listbuilder = {
 		$(selected).attr("data-bucket","selected");
 		$(selected).append("<div class='label'>Show:</div>");
 		$(listcontainer).append(selected);
-		this.syncList();
+		this.populateList();
 		// append hidden class to original select list, hiding it
 		$(this.list).addClass("listhidden");
 		this.debug('init finished');
@@ -50,16 +50,17 @@ window.app.listbuilder = {
 		// Swap
 		$(listcontainer).children("div[data-bucket='"+to+"']").append(bucket);
 		this.syncSelect();
+		this.sortList(selected);
+		this.sortList(unselected);
 	},
 
 	/*
-	* This reads the selected bucket and syncs back to the underlying select 
+	* This reads the contents of the underlying select control and populates the unselected bucket
 	*/
-	syncList : function() {
+	populateList : function() {
 		this.debug('syncing...');
 		// read each item in select list
 		$(this.list).children("option").each(function(i,e) {
-			console.log(i+' item '+e.value);
 			option = document.createElement("div");
 			$(option).attr("class","option");
 			$(option).attr("data-value",e.value);
@@ -70,7 +71,7 @@ window.app.listbuilder = {
 	},
 
 	/*
-	* This reads the selected bucket and syncs back to the underlying select 
+	* This reads the contents of the selected bucket and syncs statuses back to the underlying select control
 	*/
 	syncSelect: function() {
 		this.debug('syncing select');
@@ -79,9 +80,7 @@ window.app.listbuilder = {
 		// rebuild states based on selected contents
 		$(selected).children(".option").each(function(i,e) {
 			// set this option to be selected
-			// console.log("_"+$(this).attr("data-value"));
-			$(foo).find("option[value='"+$(this).attr("data-value")+"']").prop('selected',true);
-			//console.log(i+' item '+$(e).attr('data-value'));
+			$(original).find("option[value='"+$(this).attr("data-value")+"']").prop('selected',true);
 			//$(this.list).children("option").attr(e.attr('data-value')).prop('selected',true);
 		});
 		this.debug('select updated');
