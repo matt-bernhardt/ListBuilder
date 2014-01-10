@@ -65,7 +65,11 @@ window.app.listbuilder = {
 			$(option).attr("class","option");
 			$(option).attr("data-value",e.value);
 			$(option).append(e.text);
-			$(unselected).append(option);
+			if(e.selected==false) {
+				$(unselected).append(option);
+			} else {
+				$(selected).append(option);
+			}
 		});
 		this.debug('sync finished');
 	},
