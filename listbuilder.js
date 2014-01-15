@@ -28,7 +28,7 @@ window.app.listbuilder = {
 		$(unselected).attr("class","unselected bucket");
 		$(unselected).attr("data-bucket","unselected");
 		// build filter input
-		$(unselected).append("<div class='label'><label for='filter'>Filter:</label><input type='text' name='filter' id='filter'></div>");
+		$(unselected).append("<div class='label'><label for='listfilter'>Filter:</label><input type='text' name='listfilter' id='listfilter'></div>");
 		$(listcontainer).append(unselected);
 		selected = document.createElement("div");
 		$(selected).attr("class","selected bucket");
