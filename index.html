@@ -24,6 +24,11 @@ $(document).ready(function() {
 		listbuilder.getClick(target);
 	});
 
+	$('.listcontainer input#filter').bind('keyup', function(e) {
+		listbuilder.getFilter(this.value);
+	});
+
+
 });	
 		</script>
 		<style>
@@ -58,12 +63,152 @@ dd {
 			<label for="filter">
 				Show only these departments:<br />
 				<select id="filter" name="filter" multiple="true" class="listbuilder">
-					<option value="astronomy">Astronomy</option>
-					<option value="biology">Biology</option>
-					<option value="chemistry">Chemistry</option>
-					<option value="dentistry">Dentistry</option>
-					<option value="energy">Energy</option>
-				</select>
+						<option value="Aerospace Biomedical and Life Support Engineering">Aerospace Biomedical and Life Support Engineering</option>
+						<option value="Aerospace Controls Laboratory">Aerospace Controls Laboratory</option>
+						<option value="Anthropology Program">Anthropology Program</option>
+						<option value="Auto-ID Laboratory">Auto-ID Laboratory</option>
+						<option value="Bates Linear Accelerator Center">Bates Linear Accelerator Center</option>
+						<option value="BioInstrumentation Laboratory">BioInstrumentation Laboratory</option>
+						<option value="Broad Institute - Microbial Analysis Group">Broad Institute - Microbial Analysis Group</option>
+						<option value="Broad Institute - Stanley Center for Psychiatric Research">Broad Institute - Stanley Center for Psychiatric Research</option>
+						<option value="Broad Institute of MIT and Harvard">Broad Institute of MIT and Harvard</option>
+						<option value="Building Technology Program">Building Technology Program</option>
+						<option value="Center for Biological and Computational Learning">Center for Biological and Computational Learning</option>
+						<option value="Center for Biomedical Engineering">Center for Biomedical Engineering</option>
+						<option value="Center for Biomedical Innovation">Center for Biomedical Innovation</option>
+						<option value="Center for Cancer Research">Center for Cancer Research</option>
+						<option value="Center for Collective Intelligence">Center for Collective Intelligence</option>
+						<option value="Center for Computational Engineering">Center for Computational Engineering</option>
+						<option value="Center for Electromagnetic Theory and Applications">Center for Electromagnetic Theory and Applications</option>
+						<option value="Center for Environmental Health Sciences">Center for Environmental Health Sciences</option>
+						<option value="Center for Global Change Science">Center for Global Change Science</option>
+						<option value="Center for International Studies">Center for International Studies</option>
+						<option value="Center for Materials Science and Engineering">Center for Materials Science and Engineering</option>
+						<option value="Center for Ocean Engineering">Center for Ocean Engineering</option>
+						<option value="Center for Real Estate">Center for Real Estate</option>
+						<option value="Center for Technology, Policy, and Industrial Development">Center for Technology, Policy, and Industrial Development</option>
+						<option value="Center for Theoretical Physics">Center for Theoretical Physics</option>
+						<option value="Center for Transportation &amp; Logistics">Center for Transportation &amp; Logistics</option>
+						<option value="Charles Stark Draper Laboratory">Charles Stark Draper Laboratory</option>
+						<option value="Communications Futures Program">Communications Futures Program</option>
+						<option value="Community Innovators Laboratory (CoLab)">Community Innovators Laboratory (CoLab)</option>
+						<option value="Computational and Systems Biology Program">Computational and Systems Biology Program</option>
+						<option value="Computer Science and Artificial Intelligence Laboratory">Computer Science and Artificial Intelligence Laboratory</option>
+						<option value="David H. Koch Institute for Integrative Cancer Research at MIT">David H. Koch Institute for Integrative Cancer Research at MIT</option>
+						<option value="Dept. of Aeronautics and Astronautics">Dept. of Aeronautics and Astronautics</option>
+						<option value="Dept. of Architecture">Dept. of Architecture</option>
+						<option value="Dept. of Biological Engineering">Dept. of Biological Engineering</option>
+						<option value="Dept. of Biology">Dept. of Biology</option>
+						<option value="Dept. of Brain and Cognitive Sciences">Dept. of Brain and Cognitive Sciences</option>
+						<option value="Dept. of Chemical Engineering">Dept. of Chemical Engineering</option>
+						<option value="Dept. of Chemistry">Dept. of Chemistry</option>
+						<option value="Dept. of Chemistry. Instrumentation Facility">Dept. of Chemistry. Instrumentation Facility</option>
+						<option value="Dept. of Civil and Environmental Engineering">Dept. of Civil and Environmental Engineering</option>
+						<option value="Dept. of Earth, Atmospheric, and Planetary Sciences">Dept. of Earth, Atmospheric, and Planetary Sciences</option>
+						<option value="Dept. of Economics">Dept. of Economics</option>
+						<option value="Dept. of Electrical Engineering and Computer Science">Dept. of Electrical Engineering and Computer Science</option>
+						<option value="Dept. of Linguistics and Philosophy">Dept. of Linguistics and Philosophy</option>
+						<option value="Dept. of Materials Science and Engineering">Dept. of Materials Science and Engineering</option>
+						<option value="Dept. of Mathematics">Dept. of Mathematics</option>
+						<option value="Dept. of Mechanical Engineering">Dept. of Mechanical Engineering</option>
+						<option value="Dept. of Nuclear Science and Engineering">Dept. of Nuclear Science and Engineering</option>
+						<option value="Dept. of Physics">Dept. of Physics</option>
+						<option value="Dept. of Political Science">Dept. of Political Science</option>
+						<option value="Dept. of Urban Studies and Planning">Dept. of Urban Studies and Planning</option>
+						<option value="Division of Comparative Medicine">Division of Comparative Medicine</option>
+						<option value="Earth Resources Laboratory">Earth Resources Laboratory</option>
+						<option value="Engineering Systems Division">Engineering Systems Division</option>
+						<option value="Experimental Study Group">Experimental Study Group</option>
+						<option value="Foreign Languages and Literatures">Foreign Languages and Literatures</option>
+						<option value="Francis Bitter National Magnet Laboratory">Francis Bitter National Magnet Laboratory</option>
+						<option value="Glenn Laboratory for the Science of Aging">Glenn Laboratory for the Science of Aging</option>
+						<option value="Harvard-MIT Center for Ultracold Atoms">Harvard-MIT Center for Ultracold Atoms</option>
+						<option value="Harvard-MIT Division of Health Sciences and Technology">Harvard-MIT Division of Health Sciences and Technology</option>
+						<option value="Harvard-MIT Speech and Hearing Bioscience and Technology Program">Harvard-MIT Speech and Hearing Bioscience and Technology Program</option>
+						<option value="Haystack Observatory">Haystack Observatory</option>
+						<option value="High Voltage Research Laboratory">High Voltage Research Laboratory</option>
+						<option value="Howard Hughes Medical Institute">Howard Hughes Medical Institute</option>
+						<option value="Humans and Automation Lab">Humans and Automation Lab</option>
+						<option value="Institute for Medical Engineering and Science">Institute for Medical Engineering and Science</option>
+						<option value="Institute for Soldier Nanotechnologies">Institute for Soldier Nanotechnologies</option>
+						<option value="Intelligent Transportation Research Center">Intelligent Transportation Research Center</option>
+						<option value="Joint Program in Chemical Oceanography">Joint Program in Chemical Oceanography</option>
+						<option value="Joint Program in Oceanography/Applied Ocean Science and Engineering">Joint Program in Oceanography/Applied Ocean Science and Engineering</option>
+						<option value="Joint Program on the Science &amp; Policy of Global Change">Joint Program on the Science &amp; Policy of Global Change</option>
+						<option value="Laboratory for Atomistic and Molecular Mechanics">Laboratory for Atomistic and Molecular Mechanics</option>
+						<option value="Laboratory for Computational Cell Biology &amp; Biophysics">Laboratory for Computational Cell Biology &amp; Biophysics</option>
+						<option value="Laboratory for Computational Physiology">Laboratory for Computational Physiology</option>
+						<option value="Laboratory for Computer Science">Laboratory for Computer Science</option>
+						<option value="Laboratory for Electrochemical Interfaces">Laboratory for Electrochemical Interfaces</option>
+						<option value="Laboratory for Electromagnetic and Electronic Systems">Laboratory for Electromagnetic and Electronic Systems</option>
+						<option value="Laboratory for Financial Engineering">Laboratory for Financial Engineering</option>
+						<option value="Laboratory for Human and Machine Haptics">Laboratory for Human and Machine Haptics</option>
+						<option value="Laboratory for Information and Decision Systems">Laboratory for Information and Decision Systems</option>
+						<option value="Laboratory for Manufacturing and Productivity">Laboratory for Manufacturing and Productivity</option>
+						<option value="Laboratory for Nuclear Science">Laboratory for Nuclear Science</option>
+						<option value="Laser Biomedical Research Center">Laser Biomedical Research Center</option>
+						<option value="Laser Interferometer Gravitational-Wave Observatory">Laser Interferometer Gravitational-Wave Observatory</option>
+						<option value="Lemelson-MIT Awards Program">Lemelson-MIT Awards Program</option>
+						<option value="Libraries">Libraries</option>
+						<option value="Lincoln Laboratory">Lincoln Laboratory</option>
+						<option value="Lincoln Laboratory. Intelligence and Decision Technologies Group">Lincoln Laboratory. Intelligence and Decision Technologies Group</option>
+						<option value="Ludwig Center for Molecular Oncology">Ludwig Center for Molecular Oncology</option>
+						<option value="MIT Center for Digital Business">MIT Center for Digital Business</option>
+						<option value="MIT Center for Future Civic Media">MIT Center for Future Civic Media</option>
+						<option value="MIT Energy Initiative">MIT Energy Initiative</option>
+						<option value="MIT Experimental Study Group">MIT Experimental Study Group</option>
+						<option value="MIT Nuclear Reactor Laboratory">MIT Nuclear Reactor Laboratory</option>
+						<option value="MIT Program in Writing &amp; Humanistic Studies">MIT Program in Writing &amp; Humanistic Studies</option>
+						<option value="MIT School of Science">MIT School of Science</option>
+						<option value="MIT Teaching and Learning Laboratory">MIT Teaching and Learning Laboratory</option>
+						<option value="Man-Vehicle Laboratory">Man-Vehicle Laboratory</option>
+						<option value="Materials Processing Center">Materials Processing Center</option>
+						<option value="Materials Systems Laboratory">Materials Systems Laboratory</option>
+						<option value="McGovern Institute for Brain Research at MIT">McGovern Institute for Brain Research at MIT</option>
+						<option value="Media Laboratory">Media Laboratory</option>
+						<option value="Media Laboratory. Design Ecology Group">Media Laboratory. Design Ecology Group</option>
+						<option value="Media Laboratory. Human Dynamics Research Group">Media Laboratory. Human Dynamics Research Group</option>
+						<option value="Media Laboratory. Responsive Environments Group">Media Laboratory. Responsive Environments Group</option>
+						<option value="Medical Department">Medical Department</option>
+						<option value="Microphotonics Center">Microphotonics Center</option>
+						<option value="Microsystems Technology Laboratories">Microsystems Technology Laboratories</option>
+						<option value="Music and Theater Arts Section">Music and Theater Arts Section</option>
+						<option value="Nonlinear Systems Laboratory">Nonlinear Systems Laboratory</option>
+						<option value="Office of Educational Innovation and Technology">Office of Educational Innovation and Technology</option>
+						<option value="Office of the Dean for Undergraduate Education">Office of the Dean for Undergraduate Education</option>
+						<option value="Office of the Provost">Office of the Provost</option>
+						<option value="Open Learning Enterprise">Open Learning Enterprise</option>
+						<option value="Operations Research Center">Operations Research Center</option>
+						<option value="Personal Robots Group">Personal Robots Group</option>
+						<option value="Picower Institute for Learning and Memory">Picower Institute for Learning and Memory</option>
+						<option value="Plasma Science and Fusion Center">Plasma Science and Fusion Center</option>
+						<option value="Police">Police</option>
+						<option value="Program in Art, Culture and Technology">Program in Art, Culture and Technology</option>
+						<option value="Program in History, Anthropology, and Science, Technology, and Society">Program in History, Anthropology, and Science, Technology, and Society</option>
+						<option value="Program in Polymer Science and Technology">Program in Polymer Science and Technology</option>
+						<option value="Program in Science, Technology and Society">Program in Science, Technology and Society</option>
+						<option value="RIKEN-MIT Center for Neural Circuit Genetics">RIKEN-MIT Center for Neural Circuit Genetics</option>
+						<option value="Ragon Institute of MGH, MIT and Harvard">Ragon Institute of MGH, MIT and Harvard</option>
+						<option value="Research Laboratory of Electronics">Research Laboratory of Electronics</option>
+						<option value="Research Laboratory of Electronics. Digital Signal Processing Group">Research Laboratory of Electronics. Digital Signal Processing Group</option>
+						<option value="Responsive Environments Group">Responsive Environments Group</option>
+						<option value="SENSEable City Laboratory">SENSEable City Laboratory</option>
+						<option value="School of Architecture and Planning">School of Architecture and Planning</option>
+						<option value="School of Humanities, Arts, and Social Sciences">School of Humanities, Arts, and Social Sciences</option>
+						<option value="School of Science">School of Science</option>
+						<option value="Sea Grant College Program">Sea Grant College Program</option>
+						<option value="Security Studies Program">Security Studies Program</option>
+						<option value="Signals, Information and Algorithms Laboratory">Signals, Information and Algorithms Laboratory</option>
+						<option value="Singapore-MIT Alliance">Singapore-MIT Alliance</option>
+						<option value="Singapore-MIT Alliance in Research and Technology (SMART)">Singapore-MIT Alliance in Research and Technology (SMART)</option>
+						<option value="Sloan School of Management">Sloan School of Management</option>
+						<option value="Sloan School of Management. Technological Innovation, Entrepreneurship, and Strategic Management Group">Sloan School of Management. Technological Innovation, Entrepreneurship, and Strategic Management Group</option>
+						<option value="Spectroscopy Laboratory">Spectroscopy Laboratory</option>
+						<option value="System Design and Management Program">System Design and Management Program</option>
+						<option value="Whitaker College of Health Sciences and Technology">Whitaker College of Health Sciences and Technology</option>
+						<option value="Whitehead Institute for Biomedical Research">Whitehead Institute for Biomedical Research</option>
+						<option value="Woods Hole Oceanographic Institution. Joint Program">Woods Hole Oceanographic Institution. Joint Program</option>
+						<option value="Writing Across the Curriculum  Program">Writing Across the Curriculum  Program</option>				</select>
 			</label>
 			<input type="submit">
 			</form>

@@ -16,8 +16,25 @@
 	background-color: #cdcdcd;
 
 }
+.unselected .label {
+	background-color: #bcbcbc;
+	padding: 0.2em;
+	margin: -0.2em;
+	margin-bottom: 0.25em;	
+}
+.unselected .label label {
+	width: 20%;
+}
+.unselected input {
+	background-color: #dedede;
+	border: none;
+	width: 80%;
+}
 .unselected .option:before {
 	content: '+ ';
+}
+.unselected .option.hidden {
+	display: none;
 }
 .selected {
 	border: .1em solid green;

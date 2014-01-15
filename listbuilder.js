@@ -27,6 +27,8 @@ window.app.listbuilder = {
 		unselected = document.createElement("div");
 		$(unselected).attr("class","unselected bucket");
 		$(unselected).attr("data-bucket","unselected");
+		// build filter input
+		$(unselected).append("<div class='label'><label for='filter'>Filter:</label><input type='text' name='filter' id='filter'></div>");
 		$(listcontainer).append(unselected);
 		selected = document.createElement("div");
 		$(selected).attr("class","selected bucket");
@@ -52,6 +54,23 @@ window.app.listbuilder = {
 		this.syncSelect();
 		this.sortList(selected);
 		this.sortList(unselected);
+	},
+
+	/*
+	* This is the listener for the filter input on the unselected bucket
+	*/
+	getFilter : function(string) {
+		// function should be case-insensitive
+		string = string.toLowerCase();
+		$(unselected).children(".option").each(function() {
+			// reset hidden states
+			$(this).removeClass("hidden");
+			// function should be case-insensitive
+			theValue = $(this).attr('data-value').toLowerCase();
+			if(theValue.indexOf(string) == -1){
+				$(this).addClass("hidden");
+			}
+		});
 	},
 
 	/*
