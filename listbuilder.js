@@ -28,7 +28,7 @@ window.app.listbuilder = {
 		$(unselected).attr("class","unselected bucket");
 		$(unselected).attr("data-bucket","unselected");
 		// build filter input
-		$(unselected).append("<div class='label'><label for='listfilter'>Filter:</label><input type='text' name='listfilter' id='listfilter'></div>");
+		$(unselected).append("<div class='label'><label for='listfilter'>Search:</label><input type='text' name='listfilter' id='listfilter'><a class='reset'>Clear</a></div>");
 		$(listcontainer).append(unselected);
 		selected = document.createElement("div");
 		$(selected).attr("class","selected bucket");
@@ -91,6 +91,14 @@ window.app.listbuilder = {
 			}
 		});
 		this.debug('sync finished');
+	},
+
+	/*
+	* This empties the search/filter control
+	*/
+	resetFilter : function() {
+		$("#listfilter").val('');
+		this.getFilter('');
 	},
 
 	/*

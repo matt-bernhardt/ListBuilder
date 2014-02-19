@@ -28,6 +28,10 @@ $(document).ready(function() {
 		listbuilder.getFilter(this.value);
 	});
 
+	$('.listcontainer a.reset').click(function() {
+		listbuilder.resetFilter();
+		event.preventDefault();
+	});
 
 });	
 		</script>
